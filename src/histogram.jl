@@ -58,7 +58,7 @@ function initialize(queries::Queries, data::Histogram, ps::MWParameters)
         noise = rand(Laplace(0.0, 1/(num_samples*ps.epsilon*ps.init_budget)), histogram_length)
         @simd for i = 1:histogram_length
              @inbounds weights[i] =
-                 max(data.weights[i] + noise[i] - 1.0/(e*num_samples*ps.epsilon), 0.0)
+                 max(data.weights[i] + noise[i] - 1.0/(exp(1)*num_samples*ps.epsilon), 0.0)
         end
         weights /= sum(weights)
         synthetic = Histogram(0.5 * weights + 0.5/histogram_length)
