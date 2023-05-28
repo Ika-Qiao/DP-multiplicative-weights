@@ -61,7 +61,7 @@ function initialize(queries::Queries, data::Histogram, ps::MWParameters)
                  max(data.weights[i] + noise[i] - 1.0/(exp(1)*num_samples*ps.epsilon), 0.0)
         end
         weights /= sum(weights)
-        w = 0.5 * weights .+ 0.5/histogram_length
+        w = 0.5 * weights 
         synthetic = Histogram(w)
         ps.epsilon = (1-ps.init_budget)*ps.epsilon
     else
