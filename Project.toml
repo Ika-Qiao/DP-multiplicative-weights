@@ -13,6 +13,7 @@ Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Setfield = "efcf1570-3423-57d1-acb7-fd33fddbac46"
 
 [compat]
 julia = "1"
@@ -20,6 +21,7 @@ julia = "1"
 [extras]
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Setfield = "efcf1570-3423-57d1-acb7-fd33fddbac46"
 
 [targets]
-test = ["Test", "Random"]
+test = ["Test", "Random","Setfield"]
