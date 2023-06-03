@@ -63,7 +63,8 @@ function initialize(queries::Queries, data::Histogram, ps::MWParameters)
         weights /= sum(weights)
         w = 0.5 * weights 
         synthetic = Histogram(w)
-        ps.epsilon = (1-ps.init_budget)*ps.epsilon
+        new_epsilon = (1-ps.init_budget)*ps.epsilon
+        ps = @set ps.epsilon = new_epsilon
     else
         weights = ones(Float64, histogram_length)
         synthetic = Histogram(weights/histogram_length)
